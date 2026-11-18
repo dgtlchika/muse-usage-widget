@@ -2,7 +2,7 @@
 // GitHub非公開リポジトリの usage.json を読み取り専用トークンで取得して表示する。
 // 設定：下の TOKEN に、muse-usage-widget 専用の読み取り専用トークンを貼る。
 
-const TOKEN = "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";
+const TOKEN = "YOUR_READ_ONLY_TOKEN";;
 const URL = "https://raw.githubusercontent.com/dgtlchika/muse-usage-widget/main/usage.json";
 
 async function main() {
