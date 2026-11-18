@@ -2,7 +2,7 @@
 // GitHub非公開リポジトリの usage.json を読み取り専用トークンで取得して表示する。
 // 設定：下の TOKEN に、muse-usage-widget 専用の読み取り専用トークンを貼る。
 
-const TOKEN = "ここにトークンを貼る";
+const TOKEN = "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";
 const URL = "https://raw.githubusercontent.com/dgtlchika/muse-usage-widget/main/usage.json";
 
 async function main() {
@@ -29,6 +29,7 @@ async function main() {
   }
 
   const remain = data.remaining_percent;
+  const small = config.widgetFamily === "small";
   let color = new Color("#7ee787"); // 緑
   if (remain < 10) color = new Color("#ff6666"); // 赤
   else if (remain < 25) color = new Color("#ffd166"); // 黄
@@ -40,17 +41,20 @@ async function main() {
 
   const pct = w.addText(remain + "%");
   pct.textColor = color;
-  pct.font = Font.boldSystemFont(34);
+  pct.font = Font.boldSystemFont(small ? 30 : 34);
   w.addSpacer(6);
 
-  // 残量バー（20マス）
-  const filled = Math.round(remain / 5);
-  const bar = w.addText("█".repeat(filled) + "░".repeat(20 - filled));
+  // 残量バー（小サイズは10マス、通常は17マス。空きマスはドットで崩れ防止）
+  const cells = small ? 10 : 17;
+  const filled = Math.round((remain / 100) * cells);
+  const bar = w.addText("█".repeat(filled) + "·".repeat(cells - filled));
   bar.textColor = color;
   bar.font = Font.systemFont(10);
   w.addSpacer(6);
 
-  const plan = w.addText("プラン: " + (data.plan || "-") + "（使用 " + data.used_percent + "%）");
+  const plan = w.addText(small
+    ? (data.plan || "-") + "（使用 " + data.used_percent + "%）"
+    : "プラン: " + (data.plan || "-") + "（使用 " + data.used_percent + "%）");
   plan.textColor = Color.white();
   plan.font = Font.systemFont(11);
 
