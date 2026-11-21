@@ -1,9 +1,9 @@
 {
   "plan": "Maximum",
-  "used_percent": 0,
-  "remaining_percent": 100,
+  "used_percent": 2,
+  "remaining_percent": 98,
   "reset_at": "2026-11-28T20:40:00+09:00",
   "reset_display": "11/28 20:40",
-  "updated_at": "2026-11-21T20:44:01.447073+09:00",
-  "updated_display": "11/21 20:44"
+  "updated_at": "2026-11-21T23:44:06.721910+09:00",
+  "updated_display": "11/21 23:44"
 }
