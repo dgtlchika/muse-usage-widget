@@ -31,3 +31,8 @@ Exact token counts are not exposed by Muse, so the widget shows percentages — 
 
 Built by Digital Basement — a human troubleshooter and an AI partner, Kohaku.
 Inspired by a post from @gagarot200 on X.
+
+## デジタル地下室の他のコンテンツ
+
+- note（目次）：https://note.com/sumaho_lab/n/n96ded41773ed
+- BOOTH（デジタル地下室のショップ）：https://digital-basement.booth.pm/
